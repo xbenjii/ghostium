@@ -17,17 +17,16 @@ var Drawer = (function($, Mzr) {
     var module = {
         open: function() {
             _body.addClass('drawer-open drawer-transition');
-            $.get('/ghost/api/v0.1/posts/')
+            $.getJSON('/ghost/api/v0.1/posts/')
                 .sucess(function(data) {
-                    $('.drawer-posts').empty(function() {
-                        data.posts.forEach(function(post) {
-                            $('.drawer-posts').append(
-                                ['<li class="drawer-list-item">',
-                                    '<a href="' + post.slug + '" itemprop="url" data-pjax title="' + post.title + '"><i class="fa fa-book"></i>' + post.title + '</a>',
-                                    '</li>'
-                                ].join("")
-                            );
-                        })
+                    $('.drawer-posts').empty()
+                    data.posts.forEach(function(post) {
+                        $('.drawer-posts').append(
+                            ['<li class="drawer-list-item">',
+                                '<a href="' + post.slug + '" itemprop="url" data-pjax title="' + post.title + '"><i class="fa fa-book"></i>' + post.title + '</a>',
+                                '</li>'
+                            ].join("")
+                        );
                     })
                 });
         },
