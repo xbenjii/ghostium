@@ -37,15 +37,33 @@ Ghostium uses Font Awesome you can find all icons available on the url below
 </li>
 <li class="drawer-list-divider"></li>
 <li class="drawer-list-item drawer-list-title">
+  Posts
+</li>
+<div class="drawer-posts">
+  {{#foreach posts}}
+    <li class="drawer-list-item">
+      <a href="{{url}}" itemprop="url" data-pjax title="{{title}}">
+        <i class="fa fa-book"></i>{{title}}
+      </a>
+    </li>
+  {{/foreach}}
+</div>
+<li class="drawer-list-divider"></li>
+<li class="drawer-list-item drawer-list-title">
   Follow me
 </li>
 <li class="drawer-list-item">
-  <a href="http://twitter.com" target="_blank">
+  <a href="https://www.facebook.com/xbenjiidotcodotuk" target="_blank">
+    <i class="fa fa-facebook"></i>Facebook
+  </a>
+</li>
+<li class="drawer-list-item">
+  <a href="http://twitter.com/xbenjii" target="_blank">
     <i class="fa fa-twitter"></i>Twitter
   </a>
 </li>
 <li class="drawer-list-item">
-  <a href="http://github.com" target="_blank">
+  <a href="http://github.com/xbenjii" target="_blank">
     <i class="fa fa-github"></i>Github
   </a>
 </li>
